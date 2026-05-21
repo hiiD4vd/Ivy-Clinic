@@ -1,0 +1,113 @@
+.testimonials-section {
+  background: transparent;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.testimonials-marquee-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.marquee-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Blur gradient masks at edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 0.75rem;
+  /* Must be wider than viewport to allow infinite scroll */
+  width: max-content;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.scroll-left {
+  animation: scrollLeft linear infinite;
+}
+
+.scroll-right {
+  animation: scrollRight linear infinite;
+}
+
+/* Speeds */
+.fast .scroll-left, .fast .scroll-right { animation-duration: 35s; }
+.normal .scroll-left, .normal .scroll-right { animation-duration: 45s; }
+.slow .scroll-left, .slow .scroll-right { animation-duration: 55s; }
+
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.75rem)); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(calc(-50% - 0.75rem)); }
+  100% { transform: translateX(0); }
+}
+
+.review-card {
+  width: 350px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(138, 43, 226, 0.1);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-secondary);
+}
+
+.review-author-info h4 {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  margin: 0;
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+.review-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text-muted-dark);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    width: 280px;
+    padding: 1.25rem;
+  }
+}

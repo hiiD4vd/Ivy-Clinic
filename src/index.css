@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Color Palette - Rich Purple Theme */
+  --color-primary: #8a2be2; /* Bright purple for accents */
+  --color-primary-light: rgba(138, 43, 226, 0.2); 
+  --color-secondary: #d4af37; /* Gold */
+  --color-secondary-light: rgba(212, 175, 55, 0.2);
+  --color-accent: #d4af37;
+  --color-bg: #4a1469; /* Deep purple */
+  --color-surface: #ffffff; /* White cards */
+  --color-text: #ffffff; /* White text for main background */
+  --color-text-dark: #1a1a1a; /* Dark text for inside white cards */
+  --color-text-muted: #e0d1eb; /* Light purple for muted text on dark bg */
+  --color-text-muted-dark: #666666; /* Muted text inside cards */
+  --color-border: rgba(255, 255, 255, 0.1);
+  
+  /* Typography */
+  --font-main: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  /* Utilities */
+  --transition-smooth: all 0.3s ease;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --radius-xl: 120px;
+  --radius-full: 9999px;
+  
+  /* Layout */
+  --max-width: 1280px;
+  --nav-height: 90px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.1), transparent 25%),
+    linear-gradient(135deg, #3d0c5a 0%, #200430 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-main);
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Base Buttons */
+.btn-dark {
+  background: var(--color-surface);
+  color: var(--color-text-dark);
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-dark:hover {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.btn-outline {
+  border: 1px solid var(--color-border);
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Section Spacing */
+.section-padding {
+  padding: 6rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
