@@ -95,3 +95,6 @@
     display: block;
   }
 }
+
+.nav-logo-img { height: 45px; width: auto; object-fit: contain; border-radius: 8px; }
+

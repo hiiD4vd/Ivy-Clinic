@@ -37,7 +37,7 @@ const Navbar = ({ onBookClick }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span style={{ color: 'var(--color-primary)' }}>Ivy</span>Clinic
+          <img src="/logo.jpg" alt="Ivy Clinic Logo" className="nav-logo-img" />
         </motion.a>
 
         <div className="nav-links desktop-only">
