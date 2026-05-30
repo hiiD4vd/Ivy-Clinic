@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
-const Navbar = ({ onBookClick }) => {
+const Navbar = ({ onBookClick, onGoHome }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -34,6 +34,7 @@ const Navbar = ({ onBookClick }) => {
         <motion.a 
           href="#home" 
           className="logo"
+          onClick={onGoHome}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -46,6 +47,7 @@ const Navbar = ({ onBookClick }) => {
               key={index} 
               href={link.href} 
               className="nav-link"
+              onClick={onGoHome}
               whileHover={{ y: -2, color: 'var(--color-primary)' }}
             >
               {link.name}
@@ -86,7 +88,10 @@ const Navbar = ({ onBookClick }) => {
                 key={index} 
                 href={link.href} 
                 className="mobile-nav-link"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  if (onGoHome) onGoHome();
+                }}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}

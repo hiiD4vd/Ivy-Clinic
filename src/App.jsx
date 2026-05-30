@@ -19,9 +19,13 @@ function App() {
     setShowProposal(true);
   };
 
+  const handleGoHome = () => {
+    setShowProposal(false);
+  };
+
   return (
     <>
-      <Navbar onBookClick={handleBookingClick} />
+      <Navbar onBookClick={handleBookingClick} onGoHome={handleGoHome} />
       {showProposal ? (
         <ProposalScreen onClose={() => setShowProposal(false)} />
       ) : (
