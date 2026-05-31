@@ -58,16 +58,13 @@
 .service-card {
   display: flex;
   flex-direction: column;
-  background: white;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(92, 32, 146, 0.05);
-  border: 1px solid rgba(92, 32, 146, 0.05);
+  background: transparent;
+  overflow: visible;
 }
 
 .service-img-wrapper {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1/1;
   position: relative;
   overflow: hidden;
 }
@@ -100,41 +97,196 @@
 .service-info {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 2.5rem 0 0 0;
+  position: relative;
+  flex-grow: 1;
+}
+
+.service-number {
+  position: absolute;
+  top: 0.5rem;
+  left: -0.5rem;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.04);
+  font-weight: 700;
+  font-family: var(--font-serif);
+  z-index: 0;
+  line-height: 1;
+}
+
+.service-subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
 }
 
 .service-info h3 {
-  font-size: 1.2rem;
-  font-family: var(--font-main);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--color-primary);
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.service-divider {
+  width: 50px;
+  height: 2px;
+  background: var(--color-secondary);
+  margin-bottom: 1.5rem;
 }
 
 .service-desc {
-  font-size: 0.9rem;
-  color: var(--color-text-muted-dark);
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  line-height: 1.6;
   flex-grow: 1;
 }
 
 .price-row {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: space-between;
   gap: 1rem;
-  padding-top: 1rem;
-  border-top: 1px dashed var(--color-border);
+}
+
+.price-row > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .original-price {
-  font-size: 0.95rem;
-  color: var(--color-text-muted-dark);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
   text-decoration: line-through;
+  margin-bottom: 0.2rem;
 }
 
 .price {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--color-text-dark);
+  color: var(--color-text);
+}
+
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.view-btn:hover {
+  border-color: var(--color-secondary);
+}
+
+.view-btn .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  color: #fff;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.view-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 576px) {
+  .services-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 2rem 1rem 2rem;
+    margin: 0 -2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .services-filter::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  .filter-btn {
+    white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.2rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .service-info {
+    padding: 1.2rem 0 0 0;
+  }
+  .service-number {
+    font-size: 2.5rem;
+    top: 0;
+  }
+  .service-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+  }
+  .service-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+  .service-divider {
+    width: 25px;
+    margin-bottom: 0.8rem;
+  }
+  .service-desc {
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .price-row > div {
+    display: flex;
+    flex-direction: column;
+  }
+  .price {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  .original-price {
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+  .discount-badge {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
+  }
+  .view-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.4rem 0.4rem 0.4rem 0.6rem;
+    font-size: 0.6rem;
+  }
+  .view-btn .arrow {
+    width: 20px;
+    height: 20px;
+    font-size: 0.6rem;
+  }
 }

@@ -56,26 +56,7 @@ const Team = () => {
         
         <div className="team-container">
           
-          {/* Left Side: Names List */}
-          <div className="team-list-side">
-            <span className="subtitle">Tim Ahli</span>
-            <h2 className="section-title">Temui Dokter & Terapis Kami</h2>
-            
-            <div className="team-names-grid">
-              {teamMembers.map((member) => (
-                <div 
-                  key={member.id} 
-                  className={`team-name-item ${activeMember.id === member.id ? 'active' : ''}`}
-                  onMouseEnter={() => setActiveMember(member)}
-                  onClick={() => setActiveMember(member)}
-                >
-                  {member.name}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side: Image Showcase */}
+          {/* Image Showcase (Moved to Left) */}
           <div className="team-image-side">
             <AnimatePresence mode="wait">
               <motion.div 
@@ -93,6 +74,25 @@ const Team = () => {
                 </div>
               </motion.div>
             </AnimatePresence>
+          </div>
+
+          {/* Names List (Moved to Right) */}
+          <div className="team-list-side">
+            <span className="subtitle">Tim Ahli</span>
+            <h2 className="section-title">Temui Dokter & Terapis Kami</h2>
+            
+            <div className="team-names-grid">
+              {teamMembers.map((member) => (
+                <div 
+                  key={member.id} 
+                  className={`team-name-item ${activeMember.id === member.id ? 'active' : ''}`}
+                  onMouseEnter={() => setActiveMember(member)}
+                  onClick={() => setActiveMember(member)}
+                >
+                  {member.name}
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>

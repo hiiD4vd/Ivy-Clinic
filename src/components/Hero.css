@@ -226,3 +226,67 @@
     align-items: center;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 0.5rem);
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    gap: 1.5rem; /* Memberikan jarak sedikit agar tidak terlalu rapat */
+  }
+
+  .hero-visuals {
+    order: 1; /* Image Top */
+    margin-bottom: 0; /* Kurangi jarak */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    order: 2; /* Text Bottom */
+  }
+
+  .oval-image-wrapper {
+    width: 240px;
+    height: 340px;
+    margin: 0 auto;
+  }
+
+  .circle-btn {
+    /* Munculkan kembali dan sesuaikan ukuran untuk mobile */
+    width: 80px;
+    height: 80px;
+    font-size: 0.8rem;
+    right: -10px;
+    bottom: 10px;
+  }
+
+  .side-content {
+    display: none; /* Hide for cleaner look */
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  /* Fix Buttons wrapping issue */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .hero-buttons .btn-dark, .hero-buttons .btn-outline {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+

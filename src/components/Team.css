@@ -11,7 +11,7 @@
 }
 
 .team-list-side {
-  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .team-list-side .subtitle {
@@ -112,7 +112,8 @@
   }
   
   .team-list-side {
-    padding-right: 0;
+    padding-left: 0;
+    order: -1;
   }
   
   .team-image-side {

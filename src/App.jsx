@@ -10,6 +10,7 @@ import Facilities from './components/Facilities';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProposalScreen from './components/ProposalScreen';
+import Shop from './components/Shop';
 
 function App() {
   const [showProposal, setShowProposal] = useState(false);
@@ -34,6 +35,7 @@ function App() {
           <About />
           <Team />
           <Treatments />
+          <Shop />
           <Gallery />
           <Testimonials />
           <Facilities />

@@ -37,9 +37,8 @@ const Hero = ({ onBookClick }) => {
           animate="visible"
         >
           <motion.h1 className="hero-title" variants={itemVariants}>
-            Langkah Awal<br />
-            Menuju Kecantikan<br />
-            Abadi
+            Langkah Awal Menuju<br />
+            Kecantikan Abadi
           </motion.h1>
           
           <motion.p className="hero-subtitle" variants={itemVariants}>

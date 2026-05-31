@@ -68,19 +68,23 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: white;
+  background: rgba(74, 20, 105, 0.95); /* Deep purple glass */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-nav-link {
   font-size: 1.1rem;
   font-weight: 500;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .mobile-btn {

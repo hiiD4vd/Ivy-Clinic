@@ -239,18 +239,26 @@ const Treatments = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: (index % 10) * 0.1 }}
-                whileHover={{ y: -10 }}
               >
                 <div className="service-img-wrapper">
-                  <div className="discount-badge">{item.discount} OFF</div>
+                  {item.discount && item.discount !== 'Promo' && <div className="discount-badge">{item.discount} OFF</div>}
                   <img src={item.img} alt={item.name} className="service-img" />
                 </div>
                 <div className="service-info">
+                  <div className="service-number">0{index + 1}.</div>
+                  <div className="service-subtitle">{item.category}</div>
                   <h3>{item.name}</h3>
+                  <div className="service-divider"></div>
                   <p className="service-desc">{item.desc}</p>
+                  
                   <div className="price-row">
-                    <span className="original-price">{item.originalPrice}</span>
-                    <span className="price">{item.price}</span>
+                    <div>
+                      <span className="original-price">{item.originalPrice}</span>
+                      <span className="price">{item.price}</span>
+                    </div>
+                    <a href="https://wa.me/628111451146" className="view-btn" target="_blank" rel="noreferrer">
+                      BOOK NOW <span className="arrow">&gt;</span>
+                    </a>
                   </div>
                 </div>
               </motion.div>

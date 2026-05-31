@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import aboutImg from '../assets/images/ruangan/unnamed.jpg';
 import './About.css';
 
 const About = () => {
@@ -47,30 +48,29 @@ const About = () => {
           </motion.div>
         </motion.div>
 
-        <div className="about-content-wrapper centered-milestones">
+        <div className="about-content-wrapper">
           <motion.div 
-            className="about-text-side text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="about-text-side"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <span className="subtitle">Tentang Ivy Clinic</span>
-            <h2 className="section-title">
+            <h2 className="section-title text-desktop-left">
               Klinik Kecantikan Muslimah<br/>
               Pertama di Cikarang
             </h2>
-            <p className="about-desc mx-auto" style={{ maxWidth: '700px' }}>
+            <p className="about-desc">
               Sebagai bagian dari Mahveen Skincare, Ivy Clinic berkomitmen menghadirkan pelayanan kecantikan, kosmetik, dan perawatan diri (Beauty, cosmetic & personal care) terbaik yang mengedepankan nilai-nilai Islami. 
             </p>
 
             <motion.ul 
-              className="check-list centered-list"
+              className="check-list about-check-list"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', textAlign: 'left', maxWidth: '800px', margin: '2rem auto' }}
             >
               <motion.li variants={itemVariants}>
                 <CheckCircle2 size={18} className="check-icon" />
@@ -89,7 +89,24 @@ const About = () => {
                 Produk Halal & Berkualitas
               </motion.li>
             </motion.ul>
+          </motion.div>
 
+          <motion.div
+            className="about-image-side"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+          >
+            <div className="blob-bg"></div>
+            <img src={aboutImg} alt="Ivy Clinic Doctor" className="doctor-img" />
+            <div className="floating-badge award-badge">
+              <div className="star-icon">★</div>
+              <div>
+                <strong>100%</strong>
+                <span>Pelayanan Syar'i</span>
+              </div>
+            </div>
           </motion.div>
         </div>
 
