@@ -92,7 +92,7 @@
   padding-bottom: 1.5rem;
 }
 
-.filter-btn {
+.catalog-filters .filter-btn {
   background: none;
   border: none;
   color: rgba(255,255,255,0.5);
@@ -107,12 +107,12 @@
   font-family: var(--font-main);
 }
 
-.filter-btn:hover,
-.filter-btn.active {
+.catalog-filters .filter-btn:hover,
+.catalog-filters .filter-btn.active {
   color: #ffffff;
 }
 
-.filter-btn.active::after {
+.catalog-filters .filter-btn.active::after {
   content: '';
   position: absolute;
   bottom: -1.5rem;
@@ -239,7 +239,7 @@
   .catalog-filters::-webkit-scrollbar {
     display: none;
   }
-  .filter-btn {
+  .catalog-filters .filter-btn {
     white-space: nowrap;
     font-size: 0.75rem;
   }
