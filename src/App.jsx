@@ -34,8 +34,8 @@ function App() {
           <Hero onBookClick={handleBookingClick} />
           <About />
           <Team />
-          <Treatments />
-          <Shop />
+          <Treatments onBookClick={handleBookingClick} />
+          <Shop onBookClick={handleBookingClick} />
           <Gallery />
           <Testimonials />
           <Facilities />

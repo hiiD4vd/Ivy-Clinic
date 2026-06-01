@@ -20,7 +20,7 @@ import img12 from '../assets/images/Olive-Moisturizer.png';
 import img13 from '../assets/images/Revitalizing-Glow-Serum.png';
 import img14 from '../assets/images/Soothing-Serum.png';
 
-const Shop = () => {
+const Shop = ({ onBookClick }) => {
   const [activeCategory, setActiveCategory] = useState('ALL');
 
   const categories = ['ALL', 'CLEANSER', 'ESSENCE', 'SUNSCREEN', 'NIGHT CREAM', 'MOISTURIZER', 'SERUM'];
@@ -135,6 +135,12 @@ const Shop = () => {
                       <h4 className="item-name">{product.name}</h4>
                     </div>
                     <p className="item-desc">{product.desc}</p>
+                    <button 
+                      className="shop-buy-btn"
+                      onClick={onBookClick}
+                    >
+                      BELI SEKARANG
+                    </button>
                   </div>
                 </motion.div>
               ))}

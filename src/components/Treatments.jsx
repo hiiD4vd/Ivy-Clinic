@@ -15,7 +15,7 @@ import t11 from '../assets/images/treatments/treatment-11.jpg'; // facial spa re
 
 import './Treatments.css';
 
-const Treatments = () => {
+const Treatments = ({ onBookClick }) => {
   const [activeTab, setActiveTab] = useState('all');
 
   const treatmentsData = [
@@ -256,9 +256,9 @@ const Treatments = () => {
                       <span className="original-price">{item.originalPrice}</span>
                       <span className="price">{item.price}</span>
                     </div>
-                    <a href="https://wa.me/628111451146" className="view-btn" target="_blank" rel="noreferrer">
+                    <button onClick={onBookClick} className="view-btn">
                       BOOK NOW <span className="arrow">&gt;</span>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </motion.div>
