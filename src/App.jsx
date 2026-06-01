@@ -13,36 +13,35 @@ import ProposalScreen from './components/ProposalScreen';
 import Shop from './components/Shop';
 
 function App() {
-  const [showProposal, setShowProposal] = useState(false);
+  const [proposalType, setProposalType] = useState(null);
 
-  const handleBookingClick = (e) => {
-    e.preventDefault();
-    setShowProposal(true);
+  const handleBookingClick = (e, type = 'booking') => {
+    if (e && e.preventDefault) e.preventDefault();
+    setProposalType(type);
   };
 
   const handleGoHome = () => {
-    setShowProposal(false);
+    setProposalType(null);
   };
 
   return (
     <>
       <Navbar onBookClick={handleBookingClick} onGoHome={handleGoHome} />
-      {showProposal ? (
-        <ProposalScreen onClose={() => setShowProposal(false)} />
-      ) : (
-        <>
-          <Hero onBookClick={handleBookingClick} />
-          <About />
-          <Team />
-          <Treatments onBookClick={handleBookingClick} />
-          <Shop onBookClick={handleBookingClick} />
-          <Gallery />
-          <Testimonials />
-          <Facilities />
-          <Contact onBookClick={handleBookingClick} />
-        </>
-      )}
+      
+      <Hero onBookClick={handleBookingClick} />
+      <About />
+      <Team />
+      <Treatments onBookClick={handleBookingClick} />
+      <Shop onBookClick={(e) => handleBookingClick(e, 'shop')} />
+      <Gallery />
+      <Testimonials />
+      <Facilities />
+      <Contact onBookClick={handleBookingClick} />
       <Footer onBookClick={handleBookingClick} />
+
+      {proposalType && (
+        <ProposalScreen type={proposalType} onClose={() => setProposalType(null)} />
+      )}
     </>
   );
 }
